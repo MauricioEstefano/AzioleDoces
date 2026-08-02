@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doces Sonhos da Lô — Trufas Artesanais</title>
+<meta name="description" content="Trufas artesanais feitas com amor em Curitiba. Escolha seus sabores favoritos e peça pelo WhatsApp.">
+<!-- Ícone do site -->
+<link rel="icon" href="Logo.jpeg" type="image/jpeg">
+<!-- Playfair Display (título elegante, com serifa) + Outfit (texto, leve e arredondada) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#topo" class="logo">
+      <img src="Logo.jpeg" alt="Doces Sonhos da Lô">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#produtos">Sabores</a>
+      <a href="#sobre">Nossa história</a>
+      <a href="#como-pedir">Como pedir</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="scallop scallop-header" aria-hidden="true"></div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="topo">
+  <div class="hero-decor" aria-hidden="true">♡ ✦ ♡</div>
+  <div class="hero-content">
+    <p class="eyebrow">Doces artesanais · feitos com amor</p>
+    <h1>Transformando sonhos<br>em doces inesquecíveis.</h1>
+    <p class="hero-sub">Trufas artesanais, feitas uma a uma. Escolha seus sabores favoritos e peça direto no WhatsApp.</p>
+    <a href="#produtos" class="btn btn-primary">Ver sabores</a>
+    <a href="https://wa.me/message/G4KFZELIOJJXB1" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Faça seu pedido</a>
+  </div>
+  <div class="scallop scallop-hero" aria-hidden="true"></div>
+</section>
+
+<!-- ===== PRODUTOS ===== -->
+<section class="produtos" id="produtos">
+
+  <!-- Filtros de categoria, preenchidos via JS a partir da lista de categorias em script.js -->
+  <div class="filtros" id="filtros" role="tablist" aria-label="Filtrar por categoria"></div>
+
+  <!-- Os cards de produto são gerados aqui dinamicamente pelo script.js, a partir do array PRODUTOS -->
+  <div class="grid-produtos" id="gridProdutos"></div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section class="sobre" id="sobre">
+  <div class="sobre-imagem">
+    <img src="Cada Pedido um sonho.png" alt="Cada pedido apoia um sonho — Doces Sonhos da Lô" class="foto-sobre">
+  </div>
+  <div class="sobre-texto">
+    <p class="eyebrow">Cada pedido apoia um sonho</p>
+    <h2>Estou vendendo trufas para pagar minha formatura.</h2>
+    <p>Doces artesanais, feitos com dedicação em cada detalhe — do recheio ao acabamento. Um sonho, uma dedicação, uma conquista de cada vez.</p>
+    <p class="destaque">Obrigada por fazer parte dessa história. 🤍</p>
+    <ul class="diferenciais">
+      <li>Trufas artesanais de 30g</li>
+      <li>Feitas na hora do pedido</li>
+      <li>Kits com os 4 sabores disponíveis</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== COMO PEDIR ===== -->
+<section class="como-pedir" id="como-pedir">
+  <div class="como-pedir-inner">
+
+    <img src="como pedir.jpeg" alt="Encomende a sua! Faça seu pedido, escolha seus sabores favoritos, receba com todo carinho." class="imagem-encomende">
+    <div class="passos-coluna">
+      <p class="eyebrow">Encomende a sua!</p>
+      <h2>Como fazer seu pedido</h2>
+      <ol class="passos">
+        <li>
+          <span class="passo-num">01</span>
+          <h3>Faça seu pedido</h3>
+          <p>Escolha entre os sabores ou monte o kit com os 4 juntos.</p>
+        </li>
+        <li>
+          <span class="passo-num">02</span>
+          <h3>Escolha seus sabores favoritos</h3>
+          <p>Brigadeiro, Ninho, Mousse de Limão ou Dois Amores.</p>
+        </li>
+        <li>
+          <span class="passo-num">03</span>
+          <h3>Receba com todo carinho</h3>
+          <p>Combine entrega ou retirada direto pelo WhatsApp.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+ <!-- ===== FEEDBACKS ===== -->
+<section class="feedbacks" id="feedbacks">
+  <div class="section-head">
+    <p class="eyebrow">O que dizem sobre a gente</p>
+    <h2>Depoimentos de clientes</h2>
+    <p class="section-sub">Sua opinião ajuda a Doces Sonhos da Lô a crescer. Deixe seu feedback abaixo!</p>
+  </div>
+
+  <!-- Vitrine: gerada pelo script.js a partir do array FEEDBACKS -->
+  <div class="grid-feedbacks" id="gridFeedbacks"></div>
+
+  <div class="form-feedback-wrap">
+    <h3>Deixe seu feedback</h3>
+    <form id="formFeedback" class="form-feedback">
+      <div class="campo">
+        <label for="nomeFeedback">Seu nome</label>
+        <input type="text" id="nomeFeedback" name="nome" placeholder="Como podemos te chamar?" required>
+      </div>
+
+      <div class="campo">
+        <span class="label-estrelas">Sua avaliação</span>
+        <div class="estrelas-input">
+          <input type="radio" id="estrela5" name="avaliacao" value="5" required><label for="estrela5" title="5 estrelas">★</label>
+          <input type="radio" id="estrela4" name="avaliacao" value="4"><label for="estrela4" title="4 estrelas">★</label>
+          <input type="radio" id="estrela3" name="avaliacao" value="3"><label for="estrela3" title="3 estrelas">★</label>
+          <input type="radio" id="estrela2" name="avaliacao" value="2"><label for="estrela2" title="2 estrelas">★</label>
+          <input type="radio" id="estrela1" name="avaliacao" value="1"><label for="estrela1" title="1 estrela">★</label>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="mensagemFeedback">Seu feedback</label>
+        <textarea id="mensagemFeedback" name="mensagem" rows="4" placeholder="Conte como foi sua experiência..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enviar feedback</button>
+      <p class="aviso-feedback">Seu feedback passa por uma breve revisão antes de aparecer aqui no site. 🤍</p>
+    </form>
+  </div>
+</section>
+<!-- ===== FOOTER / CONTATO ===== -->
+<footer class="site-footer" id="contato">
+  <div class="scallop scallop-footer" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <img src="Logo.jpeg" alt="Doces Sonhos da Lô" class="logo-footer-img">
+      <p>Doces artesanais · feitos com amor.</p>
+      <p>Alto Boqueirão, Curitiba — PR</p>
+    </div>
+    <div class="footer-col">
+      <h4>Fale com a gente</h4>
+      <div class="canais">
+        <a id="linkWhatsFooter" href="#" target="_blank" rel="noopener" class="canal">WhatsApp</a>
+        <a id="linkInstagram" href="#" target="_blank" rel="noopener" class="canal">Instagram</a>
+        <a id="linkIfood" href="#" target="_blank" rel="noopener" class="canal">iFood</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Horário</h4>
+      <p>Seg a Sex — 18h às 23h</p>
+      <p>Sáb e Dom — 11h às 15h e 18h às 23h </p>
+    </div>
+  </div>
+  <p class="copy">© <span id="anoAtual"></span> Doces Sonhos da Lô. Um sonho · Dedicação · Conquista.</p>
+</footer>
+
+<!-- Firebase (banco de dados dos feedbacks) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

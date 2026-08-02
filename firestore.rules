@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /feedbacks/{feedbackId} {
+      // Qualquer pessoa pode LER apenas os feedbacks já aprovados
+      allow read: if resource.data.aprovado == true;
+
+      // Qualquer pessoa pode CRIAR um feedback, mas sempre como "não aprovado"
+      // e com os campos corretos (evita spam e campos maliciosos)
+      allow create:
+        if request.resource.data.aprovado == false
+        && request.resource.data.nome is string
+        && request.resource.data.nome.size() > 0
+        && request.resource.data.nome.size() < 60
+        && request.resource.data.nota is int
+        && request.resource.data.nota >= 1
+        && request.resource.data.nota <= 5
+        && request.resource.data.texto is string
+        && request.resource.data.texto.size() > 0
+        && request.resource.data.texto.size() < 500;
+
+      // Ninguém pode editar ou apagar pelo site — só você, direto no Console do Firebase
+      allow update, delete: if false;
+    }
+  }
+}
